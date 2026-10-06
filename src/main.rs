@@ -6,11 +6,11 @@
 use eframe::egui;
 
 fn main() -> eframe::Result {
-    // Window settings. 620x471 is the penguin image's native size.
+    // Window settings. 620x470 is the penguin image's native size.
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_title("Tasker")
-            .with_inner_size([2016.0, 1134.0]),
+            .with_inner_size([620.0, 470.0]),
         ..Default::default()
     };
 
@@ -36,7 +36,7 @@ impl eframe::App for App {
             .show(ui, |ui| {
                 // include_image! embeds the JPEG bytes into the binary at compile time,
                 // so the app doesn't need the picture next to it at runtime.
-                ui.add(egui::Image::new(egui::include_image!("../assets/biodome.jpeg")).fit_to_exact_size(ui.available_size()));
+                ui.add(egui::Image::new(egui::include_image!("../assets/penguin.jpg")).fit_to_exact_size(ui.available_size()));
             });
     }
 }
